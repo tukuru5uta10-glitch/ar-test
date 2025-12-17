@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>tobera｜建築AR</title>
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+</head>
+<body style="margin:0">
+
+  <!-- 3Dプレビュー -->
+  <model-viewer
+    src="tobera.glb"
+    camera-controls
+    style="width:100vw;height:80vh;">
+  </model-viewer>
+
+  <!-- ARボタン（iOS公式） -->
+  <a href="tobera.usdz"
+     rel="ar"
+     style="
+       display:block;
+       text-align:center;
+       padding:20px;
+       font-size:18px;
+       background:black;
+       color:white;
+       text-decoration:none;">
+    📱 ARで表示（iPhone）
+  </a>
+
+</body>
+</html>
