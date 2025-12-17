@@ -2,33 +2,23 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>3Dモデル確認（PC）</title>
-
-  <!-- model-viewer 読み込み -->
+  <title>Tobera AR</title>
   <script type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
-
-  <style>
-    body {
-      margin: 0;
-      background: #111;
-    }
-    model-viewer {
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
 </head>
+<body style="margin:0">
 
-<body>
-  <model-viewer
-    src="tobera.glb"
-    camera-controls
-    auto-rotate
-    exposure="1"
-    shadow-intensity="1">
-  </model-viewer>
+<model-viewer
+  src="tobera.glb"
+  camera-controls
+  style="width:100vw;height:80vh;">
+</model-viewer>
+
+<a href="tobera.usdz" rel="ar"
+ style="display:block;text-align:center;padding:20px;background:black;color:white;">
+📱 ARで表示
+</a>
+
 </body>
 </html>
-
