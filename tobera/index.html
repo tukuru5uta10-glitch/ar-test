@@ -2,62 +2,33 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>建築AR（tobera）</title>
+  <title>3Dモデル確認（PC）</title>
 
-  <!-- model-viewer 本体 -->
+  <!-- model-viewer 読み込み -->
   <script type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+    }
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
 </head>
 
-<body style="margin:0; background:#000; color:#fff; font-family:sans-serif;">
-
-  <!-- ===== 3Dプレビュー ===== -->
+<body>
   <model-viewer
-    src="tobera/tobera.glb"
-    ios-src="tobera/tobera.usdz"
-
+    src="tobera.glb"
     camera-controls
     auto-rotate
-
-    ar
-    ar-modes="scene-viewer quick-look webxr"
-    ar-scale="fixed"
-
-    scale="0.01 0.01 0.01"
-
-    shadow-intensity="1"
     exposure="1"
-
-    style="width:100vw; height:80vh; background:#111;">
+    shadow-intensity="1">
   </model-viewer>
-
-  <!-- ===== 説明 ===== -->
-  <div style="padding:12px; text-align:center; font-size:14px;">
-    指で回転・拡大できます<br>
-    iPhoneは下のボタンでAR表示
-  </div>
-
-  <!-- ===== iPhone ARボタン（Quick Look） ===== -->
-  <a
-    href="tobera/tobera.usdz"
-    rel="ar"
-    style="
-      display:block;
-      margin:12px;
-      padding:14px;
-      text-align:center;
-      font-size:18px;
-      background:#fff;
-      color:#000;
-      text-decoration:none;
-      border-radius:8px;
-    ">
-    📱 iPhoneでAR表示
-  </a>
-
 </body>
 </html>
 
