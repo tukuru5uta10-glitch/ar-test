@@ -1,34 +1,89 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>tobera｜建築AR</title>
+  <meta charset="UTF-8" />
+  <title>建築ARビューア</title>
+
+  <!-- model-viewer（Google公式） -->
   <script type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    header {
+      padding: 12px;
+      text-align: center;
+      background: #000;
+      font-size: 16px;
+    }
+
+    model-viewer {
+      width: 100vw;
+      height: 70vh;
+      background: #222;
+    }
+
+    .ar-button {
+      display: block;
+      text-align: center;
+      margin: 20px;
+      padding: 16px;
+      font-size: 18px;
+      background: #007aff;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
-<body style="margin:0">
 
-  <!-- 3Dプレビュー -->
-  <model-viewer
-    src="tobera.glb"
-    camera-controls
-    style="width:100vw;height:80vh;">
-  </model-viewer>
+<body>
 
-  <!-- ARボタン（iOS公式） -->
-  <a href="tobera.usdz"
-     rel="ar"
-     style="
-       display:block;
-       text-align:center;
-       padding:20px;
-       font-size:18px;
-       background:black;
-       color:white;
-       text-decoration:none;">
-    📱 ARで表示（iPhone）
-  </a>
+<header>
+  建築ARプレビュー（iPhone / Android 対応）
+</header>
+
+<!-- 3Dプレビュー & AR -->
+<model-viewer
+  src="tobera.glb"
+  ios-src="tobera.usdz"
+  camera-controls
+  auto-rotate
+  ar
+  ar-modes="scene-viewer quick-look webxr"
+  ar-scale="fixed"
+  shadow-intensity="1"
+  exposure="1"
+>
+</model-viewer>
+
+<!-- iOS専用 AR（保険） -->
+<a
+  href="tobera.usdz"
+  rel="ar"
+  class="ar-button">
+  📱 iPhoneでAR表示
+</a>
+
+<div class="note">
+  ※ iPhoneはSafariで開いてください
+</div>
 
 </body>
 </html>
